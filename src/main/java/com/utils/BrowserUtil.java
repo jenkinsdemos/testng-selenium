@@ -27,6 +27,10 @@ public class BrowserUtil {
 		// 	below line of code to run your tests in headless mode
 			options.add_argument('--ignore-certificate-errors');
 			 options.addArguments("headless");
+			
+			capabilities = options.to_capabilities()
+			capabilities['acceptInsecureCerts'] = True
+
 			 
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver(options);
